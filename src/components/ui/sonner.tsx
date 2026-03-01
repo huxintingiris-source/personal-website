@@ -6,6 +6,7 @@ const Toaster = ({
 }) => {
   const { theme = "system" } = useTheme()
 
+  // Fixed type error for theme prop
   return (
     <Sonner
       theme={theme as "light" | "dark" | "system"}
