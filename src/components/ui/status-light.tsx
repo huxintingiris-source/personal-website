@@ -4,7 +4,12 @@ import React from 'react';
  * 状态灯组件
  * 使用三种颜色的圆形指示灯显示模型状态
  */
-export const StatusLight = ({ size = "w-3 h-3", showTooltip = true }) => {
+interface StatusLightProps {
+  size?: string;
+  showTooltip?: boolean;
+}
+
+export const StatusLight = ({ size = "w-3 h-3", showTooltip = true }: StatusLightProps) => {
   const lightElement = (
     <div 
       className={`${size} rounded-full bg-green-500 service-ready border border-white/30 shadow-sm`}

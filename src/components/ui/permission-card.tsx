@@ -1,6 +1,15 @@
 import React from "react";
 import { Check } from "lucide-react";
 
+interface PermissionCardProps {
+  icon: React.ElementType;
+  title: string;
+  description: string;
+  granted: boolean;
+  onRequest: () => void;
+  buttonText?: string;
+}
+
 const PermissionCard = ({
   icon: Icon,
   title,
@@ -8,7 +17,7 @@ const PermissionCard = ({
   granted,
   onRequest,
   buttonText = "授予权限",
-}) => {
+}: PermissionCardProps) => {
   return (
     <div className="border border-slate-200 dark:border-zinc-800 rounded-xl p-4 bg-white dark:bg-black shadow-sm transition-all hover:shadow-md">
       <div className="flex items-center justify-between gap-4">
